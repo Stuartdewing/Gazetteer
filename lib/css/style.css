@@ -1,0 +1,37 @@
+/*-------------------------- Navbar --------------------------*/
+nav{
+	height: 10vh;
+	background-color:  RGB(67,70,75);
+	font-family: 'Exo', sans-serif;
+	margin: 
+}
+
+select {
+	margin: 2vh;
+	height: 6vh;
+	width: 25vh;
+	font-size: 1.5em;
+}
+/*--------------------------   Map   --------------------------*/
+#mapid {
+	height: 90vh; 
+}
+
+
+.info {
+    padding: 1vh 1vh;
+    font: 2em Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	margin: 0 0 ;
+}
+.info h3 {
+    margin: 0 0 ;
+    color: #777;
+}
+
+#flag {
+	padding-bottom: 8px;
+}
