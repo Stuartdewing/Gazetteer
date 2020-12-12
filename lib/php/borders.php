@@ -207,7 +207,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $result=curl_exec($curl);
 curl_close($curl);
 $decodeExchangeRate = json_decode($result,true);
-$countryExchangeRate =  $decodeExchangeRate["quotes"]['USD'.$currencyIso];
+
 
 
 
@@ -250,7 +250,7 @@ $countryExchangeRate =  $decodeExchangeRate["quotes"]['USD'.$currencyIso];
     $output['weatherLat'] = $weatherLat;
     $output['weatherLng'] = $weatherLng;
 
-    $output['exchangeRate'] = $countryExchangeRate;
+   
    
     
           
