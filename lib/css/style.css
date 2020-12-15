@@ -1,5 +1,6 @@
 body {
     padding-top: 5rem;
+    background-color: lightslategrey !important;
   }
 
   .bd-placeholder-img {
@@ -142,3 +143,14 @@ body {
 @media (min-width: 62em) {
   .featurette-heading {
     margin-top: 7rem;
+  }
+}
+
+.carousel-indicators li {
+  background-color: #999;
+  background-color: rgba(70, 70, 70, 0.25);
+}
+
+.carousel-indicators .active {
+  background-color: #444;
+}
