@@ -26,6 +26,7 @@
 	$result=curl_exec($curl);
 	curl_close($curl);
     $decodeCountryData = json_decode($result,true);
+
 // Country Name
     $countryNameTest = isset($decodeCountryData['name']);
     if ($countryNameTest == false) {
@@ -93,19 +94,21 @@
         $currencyIso = $decodeOpenCage['results'][0]['annotations']['currency']['iso_code'];
     };
 // Drive on side of Road
-    // $driveOnTest = isset($decodeOpenCage['results'][0]['annotations']['roadinfo']['drive_on']);
-    // if ($driveOnTest == false) {
-    //     $driveOn = "Unknown What Side";
-    // } else {
-    //     $driveOn = $decodeOpenCage['results'][0]['annotations']['roadinfo']['drive_on'];
-    // };
+    $driveOnTest = isset($decodeOpenCage['results'][0]['annotations']['roadinfo']['drive_on']);
+    if ($driveOnTest == false) {
+        $driveOn = "Unknown What Side";
+    } else {
+        $driveOn = $decodeOpenCage['results'][0]['annotations']['roadinfo']['drive_on'];
+    };
+    $output['driveOn'] = $driveOn;
 // Country Speed Measure
-    // $speedInTest = isset($decodeOpenCage['results'][0]['annotations']['roadinfo']['speed_in']);
-    // if ($speedInTest == false) {
-    //     $speedIn = "Unknown What Speed";
-    // } else {
-    //     $speedIn = $decodeOpenCage['results'][0]['annotations']['roadinfo']['speed_in'];
-    // };
+    $speedInTest = isset($decodeOpenCage['results'][0]['annotations']['roadinfo']['speed_in']);
+    if ($speedInTest == false) {
+        $speedIn = "Unknown What Speed";
+    } else {
+        $speedIn = $decodeOpenCage['results'][0]['annotations']['roadinfo']['speed_in'];
+    };
+    $output['speed'] = $speedIn;
 // Time Zone
     $timeTest = isset($decodeOpenCage['results'][0]['annotations']['timezone']['offset_string']);
     if ($timeTest == false) {
@@ -269,14 +272,23 @@
     } else {
         $newsImg = $decodeNews['articles'][0]["urlToImage"];
         $newsImg2 = $decodeNews['articles'][2]["urlToImage"];
-        $newsImg3 = $decodeNews['articles'][3]["urlToImage"];
+        $newsImg3 = $decodeNews['articles'][4]["urlToImage"];
     };
     $output['newsImg'] = $newsImg;
     $output['newsImg2'] = $newsImg2;
     $output['newsImg3'] = $newsImg3;
-
+    // http://api.geonames.org/wikipediaSearch?q=london&maxRows=10&username=demo
     
-   
+   //      Wiki API
+   $urlWiki='http://api.geonames.org/wikipediaSearch?q=' . $countryName . '&maxRows=10&username=stuartdewing';
+        
+   $curl = curl_init();
+   curl_setopt($curl, CURLOPT_URL,$urlNews);
+   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+   $result=curl_exec($curl);
+   curl_close($curl);
+   $decodeNews = json_decode($result,true);
+   $output['newsSource'] = $decodeNews;
 
 
 

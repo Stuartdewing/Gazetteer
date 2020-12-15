@@ -1,7 +1,3 @@
-body {
-    padding-top: 5rem;
-    background-color: lightslategrey !important;
-  }
 
   .bd-placeholder-img {
     font-size: 1.125rem;
@@ -11,56 +7,42 @@ body {
     user-select: none;
   }
 
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
-
-
-  #carousel {
-    margin-top:100px !important; 
-  }
-
 /*--------------------------   Map   --------------------------*/
 #mapid {
-	height: 90vh; 
+  height: 92vh;
+  z-index: 0; 
 }
 
+/*--------------------------   Map   --------------------------*/
 
-.info {
-    padding: 1vh 1vh;
-    font: 2em Arial, Helvetica, sans-serif;
-    background: white;
-    background: rgba(255,255,255,0.8);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-	border-radius: 5px;
-	margin: 0 0 ;
-}
-.info h3 {
-    margin: 0 0 ;
-    color: #777;
+
+/*--------------------------   Button Ids   --------------------------*/
+#buttoncontainer{
+   position: relative;
+   top: 14vh;
+   left: 3vh;
+   z-index: 90;
+   margin: 0;
 }
 
-#flag {
-	padding-bottom: 8px;
+#infobutton {
+  position: relative;
+  left: 0vh;
+  top: 2vh;
+  z-index: 90;
 }
 
-
-
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+#newsbutton {
+  position: absolute;
+  left: 0vh;
+  top: 9vh;
+  z-index: 90;
+ 
 }
 
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
+/*--------------------------   Button Ids    --------------------------*/
+
+
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -79,6 +61,7 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel-item {
   height: 32rem;
+  background-color: lightslategrey;
 }
 .carousel-item > img {
   position: absolute;
@@ -89,38 +72,76 @@ body {
 }
 
 
-/* MARKETING CONTENT
+
+
+
+/* Buttons
 -------------------------------------------------- */
 
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  width:5em;
   text-align: center;
-}
-.marketing h2 {
-  font-weight: 400;
-}
-/* rtl:begin:ignore */
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
-}
-/* rtl:end:ignore */
-
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  /* rtl:remove */
-  letter-spacing: -.05rem;
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.button4:hover {background-color: #e7e7e7;}
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
 }
 
 
@@ -138,19 +159,23 @@ body {
   .featurette-heading {
     font-size: 50px;
   }
+
+
+
 }
 
 @media (min-width: 62em) {
   .featurette-heading {
     margin-top: 7rem;
   }
+
+ 
+
+
 }
 
-.carousel-indicators li {
-  background-color: #999;
-  background-color: rgba(70, 70, 70, 0.25);
-}
-
-.carousel-indicators .active {
-  background-color: #444;
-}
+/* @media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+} */
