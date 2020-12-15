@@ -11,6 +11,10 @@
 		array_push($countryIso, $country[$i]);
 	}
 
+	$output['status']['code'] = "200";
+    $output['status']['name'] = "ok";
+    $output['status']['description'] = "success - countryindex.php";
+
 	header('Content-Type: application/json; charset=UTF-8');
 	echo json_encode($countryIso, true);
 ?>

@@ -35,6 +35,17 @@
         $countryName = $decodeCountryData['name'];
     };
     $output['countryName'] = $countryName;
+
+// PHP Country Name - No Spaces
+    $phpCountryNameO = $decodeCountryData['name'];
+    $phpCountryName = str_replace(' ', '', $phpCountryNameO);
+
+
+
+   
+
+
+    
 // Capital City Name
     $capCityNameTest = isset($decodeCountryData['capital']);
     if ($capCityNameTest == false) {
@@ -208,7 +219,7 @@
 // $decodeExchangeRate = json_decode($result,true);
 
 //      News API
-    $urlNews='http://newsapi.org/v2/everything?q=' .$capCityName. '&from=' . date("Y/m/d") . '&sortBy=publishedAt&apiKey=8babb18fb77a418eaa6dab33205ba7b4';
+    $urlNews='http://newsapi.org/v2/everything?q=' .$phpCountryName. '&from=' . date("Y/m/d") . '&sortBy=publishedAt&apiKey=8babb18fb77a418eaa6dab33205ba7b4';
         
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL,$urlNews);
@@ -277,18 +288,93 @@
     $output['newsImg'] = $newsImg;
     $output['newsImg2'] = $newsImg2;
     $output['newsImg3'] = $newsImg3;
-    // http://api.geonames.org/wikipediaSearch?q=london&maxRows=10&username=demo
     
    //      Wiki API
-   $urlWiki='http://api.geonames.org/wikipediaSearch?q=' . $countryName . '&maxRows=10&username=stuartdewing';
+   $urlWiki='http://api.geonames.org/wikipediaSearchJSON?q=' . $phpCountryName . '&maxRows=10&username=stuartdewing';
         
    $curl = curl_init();
-   curl_setopt($curl, CURLOPT_URL,$urlNews);
+   curl_setopt($curl, CURLOPT_URL,$urlWiki);
    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
    $result=curl_exec($curl);
    curl_close($curl);
-   $decodeNews = json_decode($result,true);
-   $output['newsSource'] = $decodeNews;
+   $decodeWiki = json_decode($result,true);
+   $output['wiki'] = $decodeWiki;
+// Wiki Title
+    $wikiTitleTest = isset($decodeWiki["geonames"][0]['title']);
+    if ($wikiTitleTest == false) {
+        $wikiTitle1 = "No Wiki Title 1";
+        $wikiTitle2 = "No Wiki Title 2";
+        $wikiTitle3 = "No Wiki Title 3";
+    } else {
+        $wikiTitle1 = $decodeWiki["geonames"][0]["title"];
+        $wikiTitle2 = $decodeWiki["geonames"][1]["title"];
+        $wikiTitle3 = $decodeWiki["geonames"][2]["title"];
+    };
+    $output['wikiTitle1'] = $wikiTitle1;
+    $output['wikiTitle2'] = $wikiTitle2;
+    $output['wikiTitle3'] = $wikiTitle3;
+
+// Wiki Lat
+    $wikilatTest = isset($decodeWiki["geonames"][0]['lat']);
+    if ($wikilatTest == false) {
+        $wikiLat1 = "No Wiki lat 1";
+        $wikiLat2 = "No Wiki lat 2";
+        $wikiLat3 = "No Wiki lat 3";
+    } else {
+        $wikiLat1 = $decodeWiki["geonames"][0]['lat'];
+        $wikiLat2 = $decodeWiki["geonames"][1]['lat'];
+        $wikiLat3 = $decodeWiki["geonames"][2]['lat'];
+    };
+    $output['wikiLat1'] = $wikiLat1;
+    $output['wikiLat2'] = $wikiLat2;
+    $output['wikiLat3'] = $wikiLat3;
+
+// Wiki Lng
+    $wikilngTest = isset($decodeWiki["geonames"][0]['lng']);
+    if ($wikilngTest == false) {
+        $wikiLng1 = "No Wiki lng 1";
+        $wikiLng2 = "No Wiki lng 2";
+        $wikiLng3 = "No Wiki lng 3";
+    } else {
+        $wikiLng1 = $decodeWiki["geonames"][0]['lng'];
+        $wikiLng2 = $decodeWiki["geonames"][1]['lng'];
+        $wikiLng3 = $decodeWiki["geonames"][2]['lng'];
+    };
+    $output['wikiLng1'] = $wikiLng1;
+    $output['wikiLng2'] = $wikiLng2;
+    $output['wikiLng3'] = $wikiLng3;
+
+// Wiki Summary
+    $wikisummaryTest = isset($decodeWiki["geonames"][0]['summary']);
+    if ($wikisummaryTest == false) {
+        $wikisummary1 = "No Wiki summary 1";
+        $wikisummary2 = "No Wiki summary 2";
+        $wikisummary3 = "No Wiki summary 3";
+    } else {
+        $wikisummary1 = $decodeWiki["geonames"][0]['summary'];
+        $wikisummary2 = $decodeWiki["geonames"][1]['summary'];
+        $wikisummary3 = $decodeWiki["geonames"][2]['summary'];  
+    };
+    $output['wikisummary1'] = $wikisummary1;
+    $output['wikisummary2'] = $wikisummary2;
+    $output['wikisummary3'] = $wikisummary3;
+
+//Wiki Image
+    $wikithumbnailImgTest = isset($decodeWiki["geonames"][0]['thumbnailImg']);
+    if ($wikithumbnailImgTest == false) {
+        $wikithumbnailImg1 = 'lib/img/marker.png';
+        $wikithumbnailImg2 = 'lib/img/marker.png';
+        $wikithumbnailImg3 = 'lib/img/marker.png';
+    } else {
+        $wikithumbnailImg1 = $decodeWiki["geonames"][0]['thumbnailImg'];
+        $wikithumbnailImg2 = $decodeWiki["geonames"][1]['thumbnailImg'];
+        $wikithumbnailImg3 = $decodeWiki["geonames"][2]['thumbnailImg'];
+    };
+    $output['wikithumbnailImg1'] = $wikithumbnailImg1;
+    $output['wikithumbnailImg2'] = $wikithumbnailImg2;
+    $output['wikithumbnailImg3'] = $wikithumbnailImg3;
+   
+
 
 
 
@@ -302,9 +388,3 @@
     header('Content-Type: application/json; charset=UTF-8');
     echo json_encode($output);
 ?>
-
-
-
-
-
-
