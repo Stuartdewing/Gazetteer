@@ -40,6 +40,14 @@
  
 }
 
+#weatherbutton {
+  position: absolute;
+  left: 0vh;
+  top: 16vh;
+  z-index: 90;
+ 
+}
+
 /*--------------------------   Button Ids    --------------------------*/
 
 

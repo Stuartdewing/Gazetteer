@@ -37,8 +37,16 @@
     $output['countryName'] = $countryName;
 
 // PHP Country Name - No Spaces
+    if ($decodeCountryData['name'] == "United States of America"){
+        $phpCountryName = "america";
+    } elseif ($decodeCountryData['name'] == "United Kingdom of Great Britain and Northern Ireland"){
+        $phpCountryName = "england";
+    } else {
     $phpCountryNameO = $decodeCountryData['name'];
     $phpCountryName = str_replace(' ', '', $phpCountryNameO);
+    };
+    $output['php'] = $phpCountryName;
+
 
 
 
@@ -66,7 +74,7 @@
 // Languages
     $languageTest = isset($decodeCountryData['languages'][0]['name']);
     if ($languageTest == false) {
-        $language = "London";    
+        $language = "Unknown";    
     } else {
         $language = $decodeCountryData['languages'][0]['name'];
     };
@@ -153,60 +161,6 @@
     };
     $output['phplng'] = $lng;
 
-// Geonames
-
-    // $urlWeather='http://api.geonames.org/findNearByWeatherJSON?lat=' . $lat . '&lng='.$lng.'&username=stuartdewing';
-    
-    // $curl = curl_init();
-	// curl_setopt($curl, CURLOPT_URL,$urlWeather);
-	// curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-	// $result=curl_exec($curl);
-	// curl_close($curl);
-    // $decodeWeather= json_decode($result,true);
-
-    // $cloudsTest = isset($decodeWeather["weatherObservation"]['clouds']);
-    // if ($cloudsTest == false) {
-    //     $clouds = "Unknown Cloud Data";
-    // } else {
-    //     $clouds = $decodeWeather["weatherObservation"]['clouds'];
-    // };
-
-    // $windTest = isset($decodeWeather["weatherObservation"]['windSpeed']);
-    // if ($windTest == false) {
-    //     $wind = "Unknown Wind Data";
-    // } else {
-    //     $wind = $decodeWeather["weatherObservation"]['windSpeed'];
-    // };
-
-
-    // $humidityTest = isset($decodeWeather["weatherObservation"]['humidity']);
-    // if ($humidityTest == false) {
-    //     $humidity = "Unknown Humidity Data";
-    // } else {
-    //     $humidity = $decodeWeather["weatherObservation"]['humidity'];
-    // };
-
-    // $temperatureTest = isset($decodeWeather["weatherObservation"]['temperature']);
-    // if ($temperatureTest == false) {
-    //     $temperature = "Unknown Humidity Data";
-    // } else {
-    //     $temperature = $decodeWeather["weatherObservation"]['temperature'];;
-    // };
-
-    // $weatherLatTest = isset($decodeWeather["weatherObservation"]['lat']);
-    // if ($weatherLatTest == false) {
-    //     $weatherLat = "Unknown Weather Lat Data";
-    // } else {
-    //     $weatherLat = $decodeWeather["weatherObservation"]['lat'];;
-    // };
-
-    // $weatherLngTest = isset($decodeWeather["weatherObservation"]['lng']);
-    // if ($weatherLngTest == false) {
-    //     $weatherLng = "Unknown Weather Lng Data";
-    // } else {
-    //     $weatherLng = $decodeWeather["weatherObservation"]['lng'];;
-    // };
-
 // // Excahnge Rate
 
 // $urlExchangeRate='http://api.currencylayer.com/live?access_key=4078a140a6af0714e384913388cc1ac7';
@@ -219,75 +173,75 @@
 // $decodeExchangeRate = json_decode($result,true);
 
 //      News API
-    $urlNews='http://newsapi.org/v2/everything?q=' .$phpCountryName. '&from=' . date("Y/m/d") . '&sortBy=publishedAt&apiKey=8babb18fb77a418eaa6dab33205ba7b4';
+//     $urlNews='http://newsapi.org/v2/everything?q=' .$phpCountryName. '&from=' . date("Y/m/d") . '&sortBy=publishedAt&apiKey=8babb18fb77a418eaa6dab33205ba7b4';
         
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL,$urlNews);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    $result=curl_exec($curl);
-    curl_close($curl);
-    $decodeNews = json_decode($result,true);
-    $output['newsSource'] = $decodeNews;
+//     $curl = curl_init();
+//     curl_setopt($curl, CURLOPT_URL,$urlNews);
+//     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+//     $result=curl_exec($curl);
+//     curl_close($curl);
+//     $decodeNews = json_decode($result,true);
+//     $output['newsSource'] = $decodeNews;
 
-// News Title
-    $newsTitleTest = isset($decodeNews["articles"][0]['title']);
-    if ($newsTitleTest == false) {
-        $newsTitle = "No Current News";
-        $newsTitle2 = "No Current News";
-        $newsTitle3 = "No Current News";
-    } else {
-        $newsTitle= $decodeNews['articles'][0]["title"];
-        $newsTitle2= $decodeNews['articles'][2]["title"];
-        $newsTitle3= $decodeNews['articles'][4]["title"];
-    };
-    $output['newsTitle'] = $newsTitle;
-    $output['newsTitle2'] = $newsTitle2;
-    $output['newsTitle3'] = $newsTitle3;
+// // News Title
+//     $newsTitleTest = isset($decodeNews["articles"][0]['title']);
+//     if ($newsTitleTest == false) {
+//         $newsTitle = "No Current News";
+//         $newsTitle2 = "No Current News";
+//         $newsTitle3 = "No Current News";
+//     } else {
+//         $newsTitle= $decodeNews['articles'][0]["title"];
+//         $newsTitle2= $decodeNews['articles'][2]["title"];
+//         $newsTitle3= $decodeNews['articles'][4]["title"];
+//     };
+//     $output['newsTitle'] = $newsTitle;
+//     $output['newsTitle2'] = $newsTitle2;
+//     $output['newsTitle3'] = $newsTitle3;
 
-// News Description
-    $newsDescriptionTest = isset($decodeNews['articles'][0]["description"]);
-    if ($newsDescriptionTest == false) {
-        $newsDescription = "No Current News";
-        $newsDescription2 = "No Current News";
-        $newsDescription3 = "No Current News";
-    } else {
-        $newsDescription = $decodeNews['articles'][0]["description"];
-        $newsDescription2 = $decodeNews['articles'][2]["description"];
-        $newsDescription3 = $decodeNews['articles'][4]["description"];
-    };
-    $output['newsDescription'] = $newsDescription;
-    $output['newsDescription2'] = $newsDescription2;
-    $output['newsDescription3'] = $newsDescription3;
+// // News Description
+//     $newsDescriptionTest = isset($decodeNews['articles'][0]["description"]);
+//     if ($newsDescriptionTest == false) {
+//         $newsDescription = "No Current News";
+//         $newsDescription2 = "No Current News";
+//         $newsDescription3 = "No Current News";
+//     } else {
+//         $newsDescription = $decodeNews['articles'][0]["description"];
+//         $newsDescription2 = $decodeNews['articles'][2]["description"];
+//         $newsDescription3 = $decodeNews['articles'][4]["description"];
+//     };
+//     $output['newsDescription'] = $newsDescription;
+//     $output['newsDescription2'] = $newsDescription2;
+//     $output['newsDescription3'] = $newsDescription3;
 
-// News Url
-    $newsUrlTest = isset($decodeNews['articles'][0]["url"]);
-    if ($newsUrlTest == false) {
-        $newsUrl = "Unknown News URL Data";
-        $newsUrl2 = "Unknown News URL Data";
-        $newsUrl3 = "Unknown News URL Data";
-    } else {
-        $newsUrl = $decodeNews['articles'][0]["url"];
-        $newsUrl2 = $decodeNews['articles'][2]["url"];
-        $newsUrl3 = $decodeNews['articles'][4]["url"];
-    };
-    $output['newsUrl'] = $newsUrl;
-    $output['newsUrl2'] = $newsUrl2;
-    $output['newsUrl3'] = $newsUrl3;
+// // News Url
+//     $newsUrlTest = isset($decodeNews['articles'][0]["url"]);
+//     if ($newsUrlTest == false) {
+//         $newsUrl = "Unknown News URL Data";
+//         $newsUrl2 = "Unknown News URL Data";
+//         $newsUrl3 = "Unknown News URL Data";
+//     } else {
+//         $newsUrl = $decodeNews['articles'][0]["url"];
+//         $newsUrl2 = $decodeNews['articles'][2]["url"];
+//         $newsUrl3 = $decodeNews['articles'][4]["url"];
+//     };
+//     $output['newsUrl'] = $newsUrl;
+//     $output['newsUrl2'] = $newsUrl2;
+//     $output['newsUrl3'] = $newsUrl3;
 
-    // News Url
-    $newsImgTest = isset($decodeNews['articles'][0]["urlToImage"]);
-    if ($newsImgTest == false) {
-        $newsImg = "Unknown News URL Data";
-        $newsImg2 = "Unknown News URL Data";
-        $newsImg3 = "Unknown News URL Data";
-    } else {
-        $newsImg = $decodeNews['articles'][0]["urlToImage"];
-        $newsImg2 = $decodeNews['articles'][2]["urlToImage"];
-        $newsImg3 = $decodeNews['articles'][4]["urlToImage"];
-    };
-    $output['newsImg'] = $newsImg;
-    $output['newsImg2'] = $newsImg2;
-    $output['newsImg3'] = $newsImg3;
+//     // News Url
+//     $newsImgTest = isset($decodeNews['articles'][0]["urlToImage"]);
+//     if ($newsImgTest == false) {
+//         $newsImg = "Unknown News URL Data";
+//         $newsImg2 = "Unknown News URL Data";
+//         $newsImg3 = "Unknown News URL Data";
+//     } else {
+//         $newsImg = $decodeNews['articles'][0]["urlToImage"];
+//         $newsImg2 = $decodeNews['articles'][2]["urlToImage"];
+//         $newsImg3 = $decodeNews['articles'][4]["urlToImage"];
+//     };
+//     $output['newsImg'] = $newsImg;
+//     $output['newsImg2'] = $newsImg2;
+//     $output['newsImg3'] = $newsImg3;
     
    //      Wiki API
    $urlWiki='http://api.geonames.org/wikipediaSearchJSON?q=' . $phpCountryName . '&maxRows=10&username=stuartdewing';
@@ -298,7 +252,7 @@
    $result=curl_exec($curl);
    curl_close($curl);
    $decodeWiki = json_decode($result,true);
-   $output['wiki'] = $decodeWiki;
+   
 // Wiki Title
     $wikiTitleTest = isset($decodeWiki["geonames"][0]['title']);
     if ($wikiTitleTest == false) {
@@ -363,19 +317,68 @@
     $wikithumbnailImgTest = isset($decodeWiki["geonames"][0]['thumbnailImg']);
     if ($wikithumbnailImgTest == false) {
         $wikithumbnailImg1 = 'lib/img/marker.png';
-        $wikithumbnailImg2 = 'lib/img/marker.png';
-        $wikithumbnailImg3 = 'lib/img/marker.png';
     } else {
         $wikithumbnailImg1 = $decodeWiki["geonames"][0]['thumbnailImg'];
-        $wikithumbnailImg2 = $decodeWiki["geonames"][1]['thumbnailImg'];
-        $wikithumbnailImg3 = $decodeWiki["geonames"][2]['thumbnailImg'];
     };
     $output['wikithumbnailImg1'] = $wikithumbnailImg1;
+   
+    $wikithumbnailImgTest = isset($decodeWiki["geonames"][1]['thumbnailImg']);
+    if ($wikithumbnailImgTest == false) {
+        $wikithumbnailImg2 = 'lib/img/marker.png';
+    } else {
+        $wikithumbnailImg2 = $decodeWiki["geonames"][1]['thumbnailImg'];
+    };
     $output['wikithumbnailImg2'] = $wikithumbnailImg2;
+   
+    $wikithumbnailImgTest = isset($decodeWiki["geonames"][2]['thumbnailImg']);
+    if ($wikithumbnailImgTest == false) {
+        $wikithumbnailImg3 = 'lib/img/marker.png';
+    } else {
+        $wikithumbnailImg3 = $decodeWiki["geonames"][2]['thumbnailImg'];
+    };
     $output['wikithumbnailImg3'] = $wikithumbnailImg3;
    
+   //      Open Weather API
+   $urlWeather='https://api.openweathermap.org/data/2.5/onecall?lat=' . $lat . '&lon=' . $lng .   '&exclude=minutely,hourly&appid=39fe0901e03040b7e9161436a50ac711&units=metric';
+              
+        
+   $curl = curl_init();
+   curl_setopt($curl, CURLOPT_URL,$urlWeather);
+   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+   $result=curl_exec($curl);
+   curl_close($curl);
+   $decodeWeather = json_decode($result,true);
+   $output['weather'] = $decodeWeather;
 
+// Weather Icon
+   $weatherIconTest = isset($decodeWeather["current"]['weather'][0]['icon']);
+   if ($weatherIconTest == false) {
+       $weatherIconToday = "error";
+       $weatherIconTomorrow = "error";
+       $weatherIconNext = "error";
+   } else {
+       $weatherIconToday = $decodeWeather["current"]['weather'][0]['icon'];
+       $weatherIconTomorrow = $decodeWeather["daily"][1]['weather'][0]['icon'];
+       $weatherIconNext = $decodeWeather["daily"][2]['weather'][0]['icon'];
+   };
+   $output['weather']['icon']['today'] = $weatherIconToday;
+   $output['weather']['icon']['tomorrow'] = $weatherIconTomorrow;
+   $output['weather']['icon']['next'] = $weatherIconNext;
 
+// Weather Icon
+$weatherDescriptionTest = isset($decodeWeather["current"]['weather'][0]['description']);
+if ($weatherDescriptionTest == false) {
+    $weatherDescriptionToday = "   ";
+    $weatherDescriptionTomorrow = "   ";
+    $weatherDescriptionNext = "   ";
+} else {
+    $weatherDescriptionToday = $decodeWeather["current"]['weather'][0]['description'];
+    $weatherDescriptionTomorrow = $decodeWeather["daily"][1]['weather'][0]['description'];
+    $weatherDescriptionNext = $decodeWeather["daily"][2]['weather'][0]['description'];
+};
+$output['weather']['description']['today'] = $weatherDescriptionToday;
+$output['weather']['description']['tomorrow'] = $weatherDescriptionTomorrow;
+$output['weather']['description']['next'] = $weatherDescriptionNext;
 
 
 
