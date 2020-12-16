@@ -16,6 +16,10 @@
 crossorigin="">
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
      crossorigin=""></script>
+   <!-- Font Awesome   -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+
     <title>Gazetteer</title>
 <!-- CSS - External StyleSheet -->
 <link rel="stylesheet" type="text/css" href="lib/css/style.css">
@@ -33,7 +37,7 @@ crossorigin="">
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <div class="nav-item">
+              <div class="nav-item navbar-right">
                 <select tabindex="-1" aria-disabled="true" class="form-control" id="select">
                 </select>
               </div>
@@ -90,7 +94,7 @@ crossorigin="">
 
       <!-- Info: Slide 1 -->
                 <div class="carousel-item active">
-                  <div class="carousel-caption d-none d-md-block">
+                  <div class="carousel-caption ">
                     <h5 class="card-title">Capital City</h5>
                     <p class="card-text" id="capitalcity">Capital City Data</p>
 
@@ -163,8 +167,8 @@ crossorigin="">
 
       <!-- News: Slide 1 -->
                 <div class="carousel-item active">
-                 <img class="d-block w-100" id="newsimg" src="..." alt="First news slide">
-                    <div class="carousel-caption d-none d-md-block">
+                 <img class=" w-100" id="newsimg" src="..." alt="First news slide">
+                    <div class="carousel-caption ">
                       <a id="newsurl" href="" target="_blank">
                         <h5 class="card-title" id="newstitle">News 1</h5>
                       </a>
@@ -175,8 +179,8 @@ crossorigin="">
 
       <!-- News: Slide 2 -->
                 <div class="carousel-item">
-                  <img class="d-block w-100" id="newsimg2" src="..." alt="Second news slide">
-                  <div class="carousel-caption d-none d-md-block">
+                  <img class=" w-100" id="newsimg2" src="..." alt="Second news slide">
+                  <div class="carousel-caption ">
                     <a id="newsurl2" href="" target="_blank">
                       <h5 class="card-title" id="newstitle2">News 2</h5>
                     </a>
@@ -186,8 +190,8 @@ crossorigin="">
 
       <!-- News: Slide 3 -->
                 <div class="carousel-item">
-                  <img class="d-block w-100" id="newsimg3" src="..." alt="Third slide">
-                  <div class="carousel-caption d-none d-md-block">
+                  <img class="w-100" id="newsimg3" src="..." alt="Third slide">
+                  <div class="carousel-caption ">
                     <a id="newsurl3" href="" target="_blank">
                       <h5 class="card-title" id="newstitle3">News 3</h5>
                   </a>
@@ -239,8 +243,8 @@ crossorigin="">
 
       <!-- Weather: Slide 1 -->
                 <div class="carousel-item active">
-                 <img class="d-block " width="5em" id="weathericontoday" src="..." alt="First weather slide">
-                    <div class="carousel-caption d-none d-md-block">
+                 <img class="" width="5em" id="weathericontoday" src="..." alt="First weather slide">
+                    <div class="carousel-caption ">
                         <h1 class="card-title" id="">Today:</h1>
                         <h3 class="card-title" id="weatherdescriptiontoday"></h3>
                         <h4 class="card-title" id="weathertemptoday"></h4>
@@ -251,8 +255,8 @@ crossorigin="">
 
       <!-- Weather: Slide 2 -->
                 <div class="carousel-item">
-                  <img class="d-block" id="weathericontomorrow" src="..." alt="Second weather slide">
-                  <div class="carousel-caption d-none d-md-block">
+                  <img class="" id="weathericontomorrow" src="..." alt="Second weather slide">
+                  <div class="carousel-caption">
                       <h1 class="card-title" id="">Tomorrow:</h1>
                       <h3 class="card-title" id="weatherdescriptiontomorrow"></h3>
                       <h4 class="card-title" id="weathertemptomorrow"></h4>
@@ -264,8 +268,8 @@ crossorigin="">
       <!-- Weather: Slide 3 -->
                 <div class="carousel-item">
                   <img class="d-block" id="weathericonnext" src="..." alt="Third weather slide">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h1 class="card-title" id="">Next Day:</h1>
+                  <div class="carousel-caption ">
+                    <h1 class="card-title" id="">Day After Tomorrow:</h1>
                       <h3 class="card-title" id="weatherdescriptionnext"></h3>
                       <h4 class="card-title" id="weathertempnext"></h4>
                       <h5 class="card-title" id="weathersunnext"></h5>

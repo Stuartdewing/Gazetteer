@@ -173,75 +173,75 @@
 // $decodeExchangeRate = json_decode($result,true);
 
 //      News API
-//     $urlNews='http://newsapi.org/v2/everything?q=' .$phpCountryName. '&from=' . date("Y/m/d") . '&sortBy=publishedAt&apiKey=8babb18fb77a418eaa6dab33205ba7b4';
+    $urlNews='http://newsapi.org/v2/everything?q=' .$phpCountryName. '&from=' . date("Y/m/d") . '&sortBy=publishedAt&apiKey=8babb18fb77a418eaa6dab33205ba7b4';
         
-//     $curl = curl_init();
-//     curl_setopt($curl, CURLOPT_URL,$urlNews);
-//     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-//     $result=curl_exec($curl);
-//     curl_close($curl);
-//     $decodeNews = json_decode($result,true);
-//     $output['newsSource'] = $decodeNews;
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL,$urlNews);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $result=curl_exec($curl);
+    curl_close($curl);
+    $decodeNews = json_decode($result,true);
+    $output['newsSource'] = $decodeNews;
 
-// // News Title
-//     $newsTitleTest = isset($decodeNews["articles"][0]['title']);
-//     if ($newsTitleTest == false) {
-//         $newsTitle = "No Current News";
-//         $newsTitle2 = "No Current News";
-//         $newsTitle3 = "No Current News";
-//     } else {
-//         $newsTitle= $decodeNews['articles'][0]["title"];
-//         $newsTitle2= $decodeNews['articles'][2]["title"];
-//         $newsTitle3= $decodeNews['articles'][4]["title"];
-//     };
-//     $output['newsTitle'] = $newsTitle;
-//     $output['newsTitle2'] = $newsTitle2;
-//     $output['newsTitle3'] = $newsTitle3;
+// News Title
+    $newsTitleTest = isset($decodeNews["articles"][0]['title']);
+    if ($newsTitleTest == false) {
+        $newsTitle = "No Current News";
+        $newsTitle2 = "No Current News";
+        $newsTitle3 = "No Current News";
+    } else {
+        $newsTitle= $decodeNews['articles'][0]["title"];
+        $newsTitle2= $decodeNews['articles'][2]["title"];
+        $newsTitle3= $decodeNews['articles'][4]["title"];
+    };
+    $output['newsTitle'] = $newsTitle;
+    $output['newsTitle2'] = $newsTitle2;
+    $output['newsTitle3'] = $newsTitle3;
 
-// // News Description
-//     $newsDescriptionTest = isset($decodeNews['articles'][0]["description"]);
-//     if ($newsDescriptionTest == false) {
-//         $newsDescription = "No Current News";
-//         $newsDescription2 = "No Current News";
-//         $newsDescription3 = "No Current News";
-//     } else {
-//         $newsDescription = $decodeNews['articles'][0]["description"];
-//         $newsDescription2 = $decodeNews['articles'][2]["description"];
-//         $newsDescription3 = $decodeNews['articles'][4]["description"];
-//     };
-//     $output['newsDescription'] = $newsDescription;
-//     $output['newsDescription2'] = $newsDescription2;
-//     $output['newsDescription3'] = $newsDescription3;
+// News Description
+    $newsDescriptionTest = isset($decodeNews['articles'][0]["description"]);
+    if ($newsDescriptionTest == false) {
+        $newsDescription = "No Current News";
+        $newsDescription2 = "No Current News";
+        $newsDescription3 = "No Current News";
+    } else {
+        $newsDescription = $decodeNews['articles'][0]["description"];
+        $newsDescription2 = $decodeNews['articles'][2]["description"];
+        $newsDescription3 = $decodeNews['articles'][4]["description"];
+    };
+    $output['newsDescription'] = $newsDescription;
+    $output['newsDescription2'] = $newsDescription2;
+    $output['newsDescription3'] = $newsDescription3;
 
-// // News Url
-//     $newsUrlTest = isset($decodeNews['articles'][0]["url"]);
-//     if ($newsUrlTest == false) {
-//         $newsUrl = "Unknown News URL Data";
-//         $newsUrl2 = "Unknown News URL Data";
-//         $newsUrl3 = "Unknown News URL Data";
-//     } else {
-//         $newsUrl = $decodeNews['articles'][0]["url"];
-//         $newsUrl2 = $decodeNews['articles'][2]["url"];
-//         $newsUrl3 = $decodeNews['articles'][4]["url"];
-//     };
-//     $output['newsUrl'] = $newsUrl;
-//     $output['newsUrl2'] = $newsUrl2;
-//     $output['newsUrl3'] = $newsUrl3;
+// News Url
+    $newsUrlTest = isset($decodeNews['articles'][0]["url"]);
+    if ($newsUrlTest == false) {
+        $newsUrl = "Unknown News URL Data";
+        $newsUrl2 = "Unknown News URL Data";
+        $newsUrl3 = "Unknown News URL Data";
+    } else {
+        $newsUrl = $decodeNews['articles'][0]["url"];
+        $newsUrl2 = $decodeNews['articles'][2]["url"];
+        $newsUrl3 = $decodeNews['articles'][4]["url"];
+    };
+    $output['newsUrl'] = $newsUrl;
+    $output['newsUrl2'] = $newsUrl2;
+    $output['newsUrl3'] = $newsUrl3;
 
-//     // News Url
-//     $newsImgTest = isset($decodeNews['articles'][0]["urlToImage"]);
-//     if ($newsImgTest == false) {
-//         $newsImg = "Unknown News URL Data";
-//         $newsImg2 = "Unknown News URL Data";
-//         $newsImg3 = "Unknown News URL Data";
-//     } else {
-//         $newsImg = $decodeNews['articles'][0]["urlToImage"];
-//         $newsImg2 = $decodeNews['articles'][2]["urlToImage"];
-//         $newsImg3 = $decodeNews['articles'][4]["urlToImage"];
-//     };
-//     $output['newsImg'] = $newsImg;
-//     $output['newsImg2'] = $newsImg2;
-//     $output['newsImg3'] = $newsImg3;
+    // News Url
+    $newsImgTest = isset($decodeNews['articles'][0]["urlToImage"]);
+    if ($newsImgTest == false) {
+        $newsImg = "Unknown News URL Data";
+        $newsImg2 = "Unknown News URL Data";
+        $newsImg3 = "Unknown News URL Data";
+    } else {
+        $newsImg = $decodeNews['articles'][0]["urlToImage"];
+        $newsImg2 = $decodeNews['articles'][2]["urlToImage"];
+        $newsImg3 = $decodeNews['articles'][4]["urlToImage"];
+    };
+    $output['newsImg'] = $newsImg;
+    $output['newsImg2'] = $newsImg2;
+    $output['newsImg3'] = $newsImg3;
     
    //      Wiki API
    $urlWiki='http://api.geonames.org/wikipediaSearchJSON?q=' . $phpCountryName . '&maxRows=10&username=stuartdewing';
