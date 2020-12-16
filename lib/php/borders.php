@@ -365,21 +365,80 @@
    $output['weather']['icon']['tomorrow'] = $weatherIconTomorrow;
    $output['weather']['icon']['next'] = $weatherIconNext;
 
-// Weather Icon
-$weatherDescriptionTest = isset($decodeWeather["current"]['weather'][0]['description']);
-if ($weatherDescriptionTest == false) {
-    $weatherDescriptionToday = "   ";
-    $weatherDescriptionTomorrow = "   ";
-    $weatherDescriptionNext = "   ";
-} else {
-    $weatherDescriptionToday = $decodeWeather["current"]['weather'][0]['description'];
-    $weatherDescriptionTomorrow = $decodeWeather["daily"][1]['weather'][0]['description'];
-    $weatherDescriptionNext = $decodeWeather["daily"][2]['weather'][0]['description'];
-};
-$output['weather']['description']['today'] = $weatherDescriptionToday;
-$output['weather']['description']['tomorrow'] = $weatherDescriptionTomorrow;
-$output['weather']['description']['next'] = $weatherDescriptionNext;
+// Weather Description
+    $weatherDescriptionTest = isset($decodeWeather["current"]['weather'][0]['description']);
+    if ($weatherDescriptionTest == false) {
+        $weatherDescriptionToday = "   ";
+        $weatherDescriptionTomorrow = "   ";
+        $weatherDescriptionNext = "   ";
+    } else {
+        $weatherDescriptionToday = $decodeWeather["current"]['weather'][0]['description'];
+        $weatherDescriptionTomorrow = $decodeWeather["daily"][1]['weather'][0]['description'];
+        $weatherDescriptionNext = $decodeWeather["daily"][2]['weather'][0]['description'];
+    };
+    $output['weather']['description']['today'] = $weatherDescriptionToday;
+    $output['weather']['description']['tomorrow'] = $weatherDescriptionTomorrow;
+    $output['weather']['description']['next'] = $weatherDescriptionNext;
 
+// Weather Temp
+    $weathertempTest = isset($decodeWeather["current"]['temp']);
+    if ($weathertempTest == false) {
+        $weathertempToday = "   ";
+        $weathertempTomorrow = "   ";
+        $weathertempNext = "   ";
+    } else {
+        $weathertempToday = floor($decodeWeather["current"]['temp']);
+        $weathertempTomorrow = floor($decodeWeather["daily"][1]['temp']['day']);
+        $weathertempNext = floor($decodeWeather["daily"][2]['temp']['day']);
+    };
+    $output['weather']['temp']['today'] = $weathertempToday;
+    $output['weather']['temp']['tomorrow'] = $weathertempTomorrow;
+    $output['weather']['temp']['next'] = $weathertempNext;
+
+// Weather Feels Like
+    $weatherfeelsTest = isset($decodeWeather["current"]['feels_like']);
+    if ($weatherfeelsTest == false) {
+        $weatherfeelsToday = "   ";
+        $weatherfeelsTomorrow = "   ";
+        $weatherfeelsNext = "   ";
+    } else {
+        $weatherfeelsToday = floor($decodeWeather["current"]['feels_like']);
+        $weatherfeelsTomorrow = floor($decodeWeather["daily"][1]['feels_like']['day']);
+        $weatherfeelsNext = floor($decodeWeather["daily"][2]['feels_like']['day']);
+    };
+    $output['weather']['feels']['today'] = $weatherfeelsToday;
+    $output['weather']['feels']['tomorrow'] = $weatherfeelsTomorrow;
+    $output['weather']['feels']['next'] = $weatherfeelsNext;
+
+// Weather Sun Rise
+    $weatherriseTest = isset($decodeWeather["current"]['sunrise']);
+    if ($weatherriseTest == false) {
+        $weatherriseToday = "   ";
+        $weatherriseTomorrow = "   ";
+        $weatherriseNext = "   ";
+    } else {
+        $weatherriseToday = $decodeWeather["current"]['sunrise'];
+        $weatherriseTomorrow = $decodeWeather["daily"][1]['sunrise'];
+        $weatherriseNext = $decodeWeather["daily"][2]['sunrise'];
+    };
+    $output['weather']['rise']['today'] = $weatherriseToday;
+    $output['weather']['rise']['tomorrow'] = $weatherriseTomorrow;
+    $output['weather']['rise']['next'] = $weatherriseNext;
+
+// Weather Sun Set
+    $weathersetTest = isset($decodeWeather["current"]['sunset']);
+    if ($weathersetTest == false) {
+        $weathersetToday = "   ";
+        $weathersetTomorrow = "   ";
+        $weathersetNext = "   ";
+    } else {
+        $weathersetToday = $decodeWeather["current"]['sunset'];
+        $weathersetTomorrow = $decodeWeather["daily"][1]['sunset'];
+        $weathersetNext = $decodeWeather["daily"][2]['sunset'];
+    };
+    $output['weather']['set']['today'] = $weathersetToday;
+    $output['weather']['set']['tomorrow'] = $weathersetTomorrow;
+    $output['weather']['set']['next'] = $weathersetNext;
 
 
 
