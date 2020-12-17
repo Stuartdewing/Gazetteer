@@ -167,7 +167,7 @@ crossorigin="">
 
       <!-- News: Slide 1 -->
                 <div class="carousel-item active">
-                 <img class=" w-100" id="newsimg" src="..." alt="First news slide">
+                 <img class=" w-100 h-50" id="newsimg" src="..." alt="First news slide">
                     <div class="carousel-caption ">
                       <a id="newsurl" href="" target="_blank">
                         <h5 class="card-title" id="newstitle">News 1</h5>
@@ -179,7 +179,7 @@ crossorigin="">
 
       <!-- News: Slide 2 -->
                 <div class="carousel-item">
-                  <img class=" w-100" id="newsimg2" src="..." alt="Second news slide">
+                  <img class="w-100 h-50 " id="newsimg2" src="..." alt="Second news slide">
                   <div class="carousel-caption ">
                     <a id="newsurl2" href="" target="_blank">
                       <h5 class="card-title" id="newstitle2">News 2</h5>
@@ -190,7 +190,7 @@ crossorigin="">
 
       <!-- News: Slide 3 -->
                 <div class="carousel-item">
-                  <img class="w-100" id="newsimg3" src="..." alt="Third slide">
+                  <img class="w-100 h-50" id="newsimg3" src="..." alt="Third slide">
                   <div class="carousel-caption ">
                     <a id="newsurl3" href="" target="_blank">
                       <h5 class="card-title" id="newstitle3">News 3</h5>
@@ -243,7 +243,7 @@ crossorigin="">
 
       <!-- Weather: Slide 1 -->
                 <div class="carousel-item active">
-                 <img class="" width="5em" id="weathericontoday" src="..." alt="First weather slide">
+                 <img class=" w-100 weathericon" id="weathericontoday" src="..." alt="First weather slide">
                     <div class="carousel-caption ">
                         <h1 class="card-title" id="">Today:</h1>
                         <h3 class="card-title" id="weatherdescriptiontoday"></h3>
@@ -255,7 +255,7 @@ crossorigin="">
 
       <!-- Weather: Slide 2 -->
                 <div class="carousel-item">
-                  <img class="" id="weathericontomorrow" src="..." alt="Second weather slide">
+                  <img class="" width="5em" id="weathericontomorrow" src="..." alt="Second weather slide">
                   <div class="carousel-caption">
                       <h1 class="card-title" id="">Tomorrow:</h1>
                       <h3 class="card-title" id="weatherdescriptiontomorrow"></h3>
@@ -267,7 +267,7 @@ crossorigin="">
 
       <!-- Weather: Slide 3 -->
                 <div class="carousel-item">
-                  <img class="d-block" id="weathericonnext" src="..." alt="Third weather slide">
+                  <img class="d-block" width="5em" id="weathericonnext" src="..." alt="Third weather slide">
                   <div class="carousel-caption ">
                     <h1 class="card-title" id="">Day After Tomorrow:</h1>
                       <h3 class="card-title" id="weatherdescriptionnext"></h3>
@@ -296,7 +296,84 @@ crossorigin="">
     </div>
   </div>
   <!-- Modal -->
-<!-- News -->
+<!-- Weather -->
+
+<!-- Covid -->
+  <!-- Modal -->
+  <div class="modal fade" id="covid" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel3">Weather</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+          <div class="modal-body">
+    <!-- Carousel      -->
+            <div id="carouselIndicatorsCovid" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselIndicatorsCovid" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselIndicatorsCovid" data-slide-to="1"></li>
+                <li data-target="#carouselIndicatorsCovid" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+
+      <!-- Weather: Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="carousel-caption ">
+                        <h1 class="card-title" id="covidconfirmed"></h1>
+                        <h1 class="card-title" id="coviddeaths"></h1>
+                        <h1 class="card-title" id="covidrecovered"></h1>
+                        <h1 class="card-title" id="covidactive"></h1>
+                    </div>
+                </div>
+      <!-- Weather: Slide 1 -->
+
+      <!-- Weather: Slide 2 -->
+                <div class="carousel-item">
+                  <img class="" width="5em" id="weathericontomorrow" src="..." alt="Second weather slide">
+                  <div class="carousel-caption">
+                      <h1 class="card-title" id="">Tomorrow:</h1>
+                      <h3 class="card-title" id="weatherdescriptiontomorrow"></h3>
+                      <h4 class="card-title" id="weathertemptomorrow"></h4>
+                      <h5 class="card-title" id="weathersuntomorrow"></h5>
+                  </div>
+                </div>
+      <!-- Weather: Slide 2 -->
+
+      <!-- Weather: Slide 3 -->
+                <div class="carousel-item">
+                  <img class="d-block" width="5em" id="weathericonnext" src="..." alt="Third weather slide">
+                  <div class="carousel-caption ">
+                    <h1 class="card-title" id="">Day After Tomorrow:</h1>
+                      <h3 class="card-title" id="weatherdescriptionnext"></h3>
+                      <h4 class="card-title" id="weathertempnext"></h4>
+                      <h5 class="card-title" id="weathersunnext"></h5>
+                  </div>
+                </div>
+      <!-- Weather: Slide 3 -->  
+
+              </div>
+              <a class="carousel-control-prev" href="#carouselIndicatorsWeather" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselIndicatorsWeather" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+    <!-- Carousel      -->
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+<!-- Weather -->
 
 <!-- Map -->
   <main id="map" class="container-fluid ">
