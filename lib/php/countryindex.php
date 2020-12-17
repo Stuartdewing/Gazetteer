@@ -9,6 +9,7 @@
 		array_push($country[$i], $decode['features'][$i]['properties']['name']);
 		array_push($country[$i], $decode['features'][$i]['properties']['iso_a3']);
 		array_push($countryIso, $country[$i]);
+		array_push($country[$i], $decode['features'][$i]['properties']['iso_a2']);
 	}
 
 	$output['status']['code'] = "200";

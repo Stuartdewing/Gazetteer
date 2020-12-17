@@ -46,13 +46,6 @@
     $phpCountryName = str_replace(' ', '', $phpCountryNameO);
     };
     $output['php'] = $phpCountryName;
-
-
-
-
-   
-
-
     
 // Capital City Name
     $capCityNameTest = isset($decodeCountryData['capital']);
@@ -259,14 +252,20 @@
         $wikiTitle1 = "No Wiki Title 1";
         $wikiTitle2 = "No Wiki Title 2";
         $wikiTitle3 = "No Wiki Title 3";
+        $wikiTitle4 = "No Wiki Title 4";
+        $wikiTitle5 = "No Wiki Title 5";
     } else {
         $wikiTitle1 = $decodeWiki["geonames"][0]["title"];
         $wikiTitle2 = $decodeWiki["geonames"][1]["title"];
         $wikiTitle3 = $decodeWiki["geonames"][2]["title"];
+        $wikiTitle4 = $decodeWiki["geonames"][3]["title"];
+        $wikiTitle5 = $decodeWiki["geonames"][4]["title"];
     };
     $output['wikiTitle1'] = $wikiTitle1;
     $output['wikiTitle2'] = $wikiTitle2;
     $output['wikiTitle3'] = $wikiTitle3;
+    $output['wikiTitle4'] = $wikiTitle4;
+    $output['wikiTitle5'] = $wikiTitle5;
 
 // Wiki Lat
     $wikilatTest = isset($decodeWiki["geonames"][0]['lat']);
@@ -274,14 +273,20 @@
         $wikiLat1 = "No Wiki lat 1";
         $wikiLat2 = "No Wiki lat 2";
         $wikiLat3 = "No Wiki lat 3";
+        $wikiLat4 = "No Wiki lat 4";
+        $wikiLat5 = "No Wiki lat 5";
     } else {
         $wikiLat1 = $decodeWiki["geonames"][0]['lat'];
         $wikiLat2 = $decodeWiki["geonames"][1]['lat'];
         $wikiLat3 = $decodeWiki["geonames"][2]['lat'];
+        $wikiLat4 = $decodeWiki["geonames"][3]['lat'];
+        $wikiLat5 = $decodeWiki["geonames"][4]['lat'];
     };
     $output['wikiLat1'] = $wikiLat1;
     $output['wikiLat2'] = $wikiLat2;
     $output['wikiLat3'] = $wikiLat3;
+    $output['wikiLat4'] = $wikiLat4;
+    $output['wikiLat5'] = $wikiLat5;
 
 // Wiki Lng
     $wikilngTest = isset($decodeWiki["geonames"][0]['lng']);
@@ -289,14 +294,20 @@
         $wikiLng1 = "No Wiki lng 1";
         $wikiLng2 = "No Wiki lng 2";
         $wikiLng3 = "No Wiki lng 3";
+        $wikiLng4 = "No Wiki lng 4";
+        $wikiLng5 = "No Wiki lng 5";
     } else {
         $wikiLng1 = $decodeWiki["geonames"][0]['lng'];
         $wikiLng2 = $decodeWiki["geonames"][1]['lng'];
         $wikiLng3 = $decodeWiki["geonames"][2]['lng'];
+        $wikiLng4 = $decodeWiki["geonames"][3]['lng'];
+        $wikiLng5 = $decodeWiki["geonames"][4]['lng'];
     };
     $output['wikiLng1'] = $wikiLng1;
     $output['wikiLng2'] = $wikiLng2;
     $output['wikiLng3'] = $wikiLng3;
+    $output['wikiLng4'] = $wikiLng4;
+    $output['wikiLng5'] = $wikiLng5;
 
 // Wiki Summary
     $wikisummaryTest = isset($decodeWiki["geonames"][0]['summary']);
@@ -304,39 +315,45 @@
         $wikisummary1 = "No Wiki summary 1";
         $wikisummary2 = "No Wiki summary 2";
         $wikisummary3 = "No Wiki summary 3";
+        $wikisummary4 = "No Wiki summary 4";
+        $wikisummary5 = "No Wiki summary 5";
     } else {
         $wikisummary1 = $decodeWiki["geonames"][0]['summary'];
         $wikisummary2 = $decodeWiki["geonames"][1]['summary'];
-        $wikisummary3 = $decodeWiki["geonames"][2]['summary'];  
+        $wikisummary3 = $decodeWiki["geonames"][2]['summary'];
+        $wikisummary4 = $decodeWiki["geonames"][3]['summary'];
+        $wikisummary5 = $decodeWiki["geonames"][4]['summary'];    
     };
     $output['wikisummary1'] = $wikisummary1;
     $output['wikisummary2'] = $wikisummary2;
     $output['wikisummary3'] = $wikisummary3;
+    $output['wikisummary4'] = $wikisummary4;
+    $output['wikisummary5'] = $wikisummary5;
 
 //Wiki Image
-    $wikithumbnailImgTest = isset($decodeWiki["geonames"][0]['thumbnailImg']);
-    if ($wikithumbnailImgTest == false) {
-        $wikithumbnailImg1 = 'lib/img/marker.png';
-    } else {
-        $wikithumbnailImg1 = $decodeWiki["geonames"][0]['thumbnailImg'];
-    };
-    $output['wikithumbnailImg1'] = $wikithumbnailImg1;
+    // $wikithumbnailImgTest = isset($decodeWiki["geonames"][0]['thumbnailImg']);
+    // if ($wikithumbnailImgTest == false) {
+    //     $wikithumbnailImg1 = 'lib/img/marker.png';
+    // } else {
+    //     $wikithumbnailImg1 = $decodeWiki["geonames"][0]['thumbnailImg'];
+    // };
+    // $output['wikithumbnailImg1'] = $wikithumbnailImg1;
    
-    $wikithumbnailImgTest = isset($decodeWiki["geonames"][1]['thumbnailImg']);
-    if ($wikithumbnailImgTest == false) {
-        $wikithumbnailImg2 = 'lib/img/marker.png';
-    } else {
-        $wikithumbnailImg2 = $decodeWiki["geonames"][1]['thumbnailImg'];
-    };
-    $output['wikithumbnailImg2'] = $wikithumbnailImg2;
+    // $wikithumbnailImgTest = isset($decodeWiki["geonames"][1]['thumbnailImg']);
+    // if ($wikithumbnailImgTest == false) {
+    //     $wikithumbnailImg2 = 'lib/img/marker.png';
+    // } else {
+    //     $wikithumbnailImg2 = $decodeWiki["geonames"][1]['thumbnailImg'];
+    // };
+    // $output['wikithumbnailImg2'] = $wikithumbnailImg2;
    
-    $wikithumbnailImgTest = isset($decodeWiki["geonames"][2]['thumbnailImg']);
-    if ($wikithumbnailImgTest == false) {
-        $wikithumbnailImg3 = 'lib/img/marker.png';
-    } else {
-        $wikithumbnailImg3 = $decodeWiki["geonames"][2]['thumbnailImg'];
-    };
-    $output['wikithumbnailImg3'] = $wikithumbnailImg3;
+    // $wikithumbnailImgTest = isset($decodeWiki["geonames"][2]['thumbnailImg']);
+    // if ($wikithumbnailImgTest == false) {
+    //     $wikithumbnailImg3 = 'lib/img/marker.png';
+    // } else {
+    //     $wikithumbnailImg3 = $decodeWiki["geonames"][2]['thumbnailImg'];
+    // };
+    // $output['wikithumbnailImg3'] = $wikithumbnailImg3;
    
    //      Open Weather API
    $urlWeather='https://api.openweathermap.org/data/2.5/onecall?lat=' . $lat . '&lon=' . $lng .   '&exclude=minutely,hourly&appid=39fe0901e03040b7e9161436a50ac711&units=metric';
@@ -439,6 +456,85 @@
     $output['weather']['set']['today'] = $weathersetToday;
     $output['weather']['set']['tomorrow'] = $weathersetTomorrow;
     $output['weather']['set']['next'] = $weathersetNext;
+
+// Iso 2
+$urliso='https://api.opencagedata.com/geocode/v1/json?q=' . $lat . ',' . $lng . '&pretty=1&key=b018e21e70aa43d1828f1331f00d1fab';
+    $curl = curl_init();
+
+    curl_setopt($curl, CURLOPT_URL,$urliso);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $result=curl_exec($curl);
+                                                                                                                        
+    curl_close($curl);
+    $decodeiso = json_decode($result,true);
+
+    $iso2 = $decodeiso['results'][0]["components"]['ISO_3166-1_alpha-2'];
+
+// Compass
+ $urlcompass = 'http://api.geonames.org/countryInfoJSON?formatted=true&lang=it&country='. $iso2 .'&username=stuartdewing&style=full';
+
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL,$urlcompass);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $result=curl_exec($curl);
+    curl_close($curl);
+
+    $decodecompass = json_decode($result,true);
+
+    $north = $decodecompass['geonames'][0]['north'];
+    $south = $decodecompass['geonames'][0]['south'];
+    $east = $decodecompass['geonames'][0]['east'];
+    $west = $decodecompass['geonames'][0]['west'];
+
+// Earthquake
+$urlearthquake =  "http://api.geonames.org/earthquakesJSON?north=".$north."&south=".$south."&east=".$east."&west=".$west."&username=stuartdewing";
+
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL,$urlearthquake);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $result=curl_exec($curl);
+    curl_close($curl);
+
+    $decodeearthquake = json_decode($result,true);
+
+    $output['earthquake']['one']['date'] = $decodeearthquake['earthquakes'][0]['datetime'];
+    $output['earthquake']['one']['depth'] = $decodeearthquake['earthquakes'][0]['depth'];
+    $output['earthquake']['one']['lat'] = $decodeearthquake['earthquakes'][0]['lat'];
+    $output['earthquake']['one']['lng'] = $decodeearthquake['earthquakes'][0]['lng'];
+    $output['earthquake']['one']['magnitude'] = $decodeearthquake['earthquakes'][0]['magnitude'];
+
+    $output['earthquake']['two']['date'] = $decodeearthquake['earthquakes'][1]['datetime'];
+    $output['earthquake']['two']['depth'] = $decodeearthquake['earthquakes'][1]['depth'];
+    $output['earthquake']['two']['lat'] = $decodeearthquake['earthquakes'][1]['lat'];
+    $output['earthquake']['two']['lng'] = $decodeearthquake['earthquakes'][1]['lng'];
+    $output['earthquake']['two']['magnitude'] = $decodeearthquake['earthquakes'][1]['magnitude'];
+
+    $output['earthquake']['three']['date'] = $decodeearthquake['earthquakes'][2]['datetime'];
+    $output['earthquake']['three']['depth'] = $decodeearthquake['earthquakes'][2]['depth'];
+    $output['earthquake']['three']['lat'] = $decodeearthquake['earthquakes'][2]['lat'];
+    $output['earthquake']['three']['lng'] = $decodeearthquake['earthquakes'][2]['lng'];
+    $output['earthquake']['three']['magnitude'] = $decodeearthquake['earthquakes'][2]['magnitude'];
+
+    $output['earthquake']['four']['date'] = $decodeearthquake['earthquakes'][3]['datetime'];
+    $output['earthquake']['four']['depth'] = $decodeearthquake['earthquakes'][3]['depth'];
+    $output['earthquake']['four']['lat'] = $decodeearthquake['earthquakes'][3]['lat'];
+    $output['earthquake']['four']['lng'] = $decodeearthquake['earthquakes'][3]['lng'];
+    $output['earthquake']['four']['magnitude'] = $decodeearthquake['earthquakes'][3]['magnitude'];
+
+    $output['earthquake']['five']['date'] = $decodeearthquake['earthquakes'][4]['datetime'];
+    $output['earthquake']['five']['depth'] = $decodeearthquake['earthquakes'][4]['depth'];
+    $output['earthquake']['five']['lat'] = $decodeearthquake['earthquakes'][4]['lat'];
+    $output['earthquake']['five']['lng'] = $decodeearthquake['earthquakes'][4]['lng'];
+    $output['earthquake']['five']['magnitude'] = $decodeearthquake['earthquakes'][4]['magnitude'];
+
+
+
+
+
+
+
+
 
 
 
