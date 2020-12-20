@@ -258,7 +258,7 @@
         $wikiTitle1 = $decodeWiki["geonames"][0]["title"];
         $wikiTitle2 = $decodeWiki["geonames"][1]["title"];
         $wikiTitle3 = $decodeWiki["geonames"][2]["title"];
-        $wikiTitle4 = $decodeWiki["geonames"][3]["title"];
+        $wikiTitle4 = $decodeWiki["geonames"][6]["title"];
         $wikiTitle5 = $decodeWiki["geonames"][4]["title"];
     };
     $output['wikiTitle1'] = $wikiTitle1;
@@ -279,7 +279,7 @@
         $wikiLat1 = $decodeWiki["geonames"][0]['lat'];
         $wikiLat2 = $decodeWiki["geonames"][1]['lat'];
         $wikiLat3 = $decodeWiki["geonames"][2]['lat'];
-        $wikiLat4 = $decodeWiki["geonames"][3]['lat'];
+        $wikiLat4 = $decodeWiki["geonames"][6]['lat'];
         $wikiLat5 = $decodeWiki["geonames"][4]['lat'];
     };
     $output['wikiLat1'] = $wikiLat1;
@@ -300,7 +300,7 @@
         $wikiLng1 = $decodeWiki["geonames"][0]['lng'];
         $wikiLng2 = $decodeWiki["geonames"][1]['lng'];
         $wikiLng3 = $decodeWiki["geonames"][2]['lng'];
-        $wikiLng4 = $decodeWiki["geonames"][3]['lng'];
+        $wikiLng4 = $decodeWiki["geonames"][6]['lng'];
         $wikiLng5 = $decodeWiki["geonames"][4]['lng'];
     };
     $output['wikiLng1'] = $wikiLng1;
@@ -321,7 +321,7 @@
         $wikisummary1 = $decodeWiki["geonames"][0]['summary'];
         $wikisummary2 = $decodeWiki["geonames"][1]['summary'];
         $wikisummary3 = $decodeWiki["geonames"][2]['summary'];
-        $wikisummary4 = $decodeWiki["geonames"][3]['summary'];
+        $wikisummary4 = $decodeWiki["geonames"][6]['summary'];
         $wikisummary5 = $decodeWiki["geonames"][4]['summary'];    
     };
     $output['wikisummary1'] = $wikisummary1;
@@ -331,29 +331,45 @@
     $output['wikisummary5'] = $wikisummary5;
 
 //Wiki Image
-    // $wikithumbnailImgTest = isset($decodeWiki["geonames"][0]['thumbnailImg']);
-    // if ($wikithumbnailImgTest == false) {
-    //     $wikithumbnailImg1 = 'lib/img/marker.png';
-    // } else {
-    //     $wikithumbnailImg1 = $decodeWiki["geonames"][0]['thumbnailImg'];
-    // };
-    // $output['wikithumbnailImg1'] = $wikithumbnailImg1;
+    $wikiurlTest = isset($decodeWiki["geonames"][0]['wikipediaUrl']);
+    if ($wikiurlTest == false) {
+        $wikiurl1 = 'lib/img/marker.png';
+    } else {
+        $wikiurl1 = $decodeWiki["geonames"][0]['wikipediaUrl'];
+    };
+    $output['wikiurl1'] = $wikiurl1;
    
-    // $wikithumbnailImgTest = isset($decodeWiki["geonames"][1]['thumbnailImg']);
-    // if ($wikithumbnailImgTest == false) {
-    //     $wikithumbnailImg2 = 'lib/img/marker.png';
-    // } else {
-    //     $wikithumbnailImg2 = $decodeWiki["geonames"][1]['thumbnailImg'];
-    // };
-    // $output['wikithumbnailImg2'] = $wikithumbnailImg2;
+    $wikiurlTest = isset($decodeWiki["geonames"][1]['wikipediaUrl']);
+    if ($wikiurlTest == false) {
+        $wikiurl2 = 'lib/img/marker.png';
+    } else {
+        $wikiurl2 = $decodeWiki["geonames"][1]['wikipediaUrl'];
+    };
+    $output['wikiurl2'] = $wikiurl2;
    
-    // $wikithumbnailImgTest = isset($decodeWiki["geonames"][2]['thumbnailImg']);
-    // if ($wikithumbnailImgTest == false) {
-    //     $wikithumbnailImg3 = 'lib/img/marker.png';
-    // } else {
-    //     $wikithumbnailImg3 = $decodeWiki["geonames"][2]['thumbnailImg'];
-    // };
-    // $output['wikithumbnailImg3'] = $wikithumbnailImg3;
+    $wikiurlTest = isset($decodeWiki["geonames"][2]['wikipediaUrl']);
+    if ($wikiurlTest == false) {
+        $wikiurl3 = 'lib/img/marker.png';
+    } else {
+        $wikiurl3 = $decodeWiki["geonames"][2]['wikipediaUrl'];
+    };
+    $output['wikiurl3'] = $wikiurl3;
+
+    $wikiurlTest = isset($decodeWiki["geonames"][6]['wikipediaUrl']);
+    if ($wikiurlTest == false) {
+        $wikiurl4 = 'lib/img/marker.png';
+    } else {
+        $wikiurl4 = $decodeWiki["geonames"][6]['wikipediaUrl'];
+    };
+    $output['wikiurl4'] = $wikiurl3;
+
+    $wikiurlTest = isset($decodeWiki["geonames"][4]['wikipediaUrl']);
+    if ($wikiurlTest == false) {
+        $wikiurl5 = 'lib/img/marker.png';
+    } else {
+        $wikiurl5 = $decodeWiki["geonames"][4]['wikipediaUrl'];
+    };
+    $output['wikiurl5'] = $wikiurl3;
    
    //      Open Weather API
    $urlWeather='https://api.openweathermap.org/data/2.5/onecall?lat=' . $lat . '&lon=' . $lng .   '&exclude=minutely,hourly&appid=39fe0901e03040b7e9161436a50ac711&units=metric';
