@@ -34,13 +34,13 @@ crossorigin="">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark nopadding">
     <div class="container-fluid">
         <a class="navbar-brand" href="#map">Gazetteer</a>          
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+       
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <div class="nav-item navbar-right">
                 <select tabindex="-1" aria-disabled="true" class="form-control" id="select"></select>
               </div>
           </ul>
-        </div>
+        
     </div>
   </nav>
 <!-- Navbar   -->
@@ -53,11 +53,13 @@ crossorigin="">
             <div id="mapid" class="nopadding no-gutter  col-sm-12 col-md-12 col-lg-12 col-xl-12"> </div>
               <!-- info -->
                 <!-- Modal -->
-                <div class="modal fade" id="infomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade hide" id="infomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                         <div class="modal-body">
@@ -121,11 +123,14 @@ crossorigin="">
 
               <!-- News -->
   <!-- Modal -->
-  <div class="modal fade" id="news" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade hide" id="news" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel1">News</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
           <div class="modal-body">
     <!-- Carousel      -->
@@ -191,11 +196,14 @@ crossorigin="">
 
               <!-- Weather -->
                 <!-- Modal -->
-                <div class="modal fade" id="weather" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade hide" id="weather" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel2">Weather</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
                         </button>
                       </div>
                         <div class="modal-body">
