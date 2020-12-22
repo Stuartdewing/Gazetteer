@@ -47,10 +47,9 @@ crossorigin="">
 
   </header>
 <!-- Map -->
-  <main  class=" no-gutter container-fluid nopadding">
-    <div id="map" class="no-gutter container-fluid nopadding">  
-        <div class="row nopadding m-0">
-            <div id="mapid" class="nopadding no-gutter  col-sm-12 col-md-12 col-lg-12 col-xl-12"> </div>
+  <main id="map" class="  no-gutter container-fluid nopadding">
+        <div class="row nopadding m-0 container-fluid">
+            <div id="mapid" class=" fixed-bottom nopadding no-gutter container-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12"> </div>
               <!-- info -->
                 <!-- Modal -->
                 <div class="modal fade hide" id="infomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -73,22 +72,39 @@ crossorigin="">
                             <div class="carousel-inner">
 
                     <!-- Info: Slide 1 -->
-                              <div class="carousel-item active">
-                                <div class="carousel-caption ">
-                                  <h5 class="card-title">Capital City</h5>
-                                  <p class="card-text" id="capitalcity">Capital City Data</p>
+                              <div class="carousel-item active ">
+                                <div class="carousel-caption nopadding ">
+                                  
+                                    <i class="fas fa-city fa-2x"></i>
+                                    <div class="infocontainer">
+                                      <h5 class="card-title">Capital City: </h5>
+                                      <p class="card-text" id="capitalcity">Capital City Data</p>
+                                    </div>
 
-                                  <h5 class="card-title" >Population</h5>
-                                  <p class="card-text"id="population">Population Data</p>
+                                    <i class="fas fa-users fa-2x"></i>
+                                    <div class="infocontainer">
+                                      <h5 class="card-title" >Population: </h5>
+                                      <p class="card-text" id="population">Population Data</p>
+                                    </div>
 
-                                  <h5 class="card-title">Language</h5>
-                                  <p class="card-text" id="language">Language Data</p>
+                                    <i class="fas fa-language fa-2x"></i>
+                                    <div class="infocontainer">
+                                      <h5 class="card-title">Language: </h5>
+                                      <p class="card-text" id="language">Language Data</p>
+                                    </div>
 
-                                  <h5 class="card-title">Currency</h5>
-                                  <p class="card-text" id="currency">Currency Data</p>
+                                    <i class="fas fa-coins fa-2x"></i>
+                                    <div class="infocontainer">
+                                      <h5 class="card-title">Currency: </h5>
+                                      <p class="card-text" id="currency">Currency Data</p>
+                                    </div>
 
-                                  <h5 class="card-title">Time Zone</h5>
-                                  <p class="card-text" id="time">Time Data</p>
+                                    <i class="far fa-clock fa-2x"></i>
+                                    <div class="infocontainer">
+                                      <h5 class="card-title">Time Zone: </h5>
+                                      <p class="card-text" id="time">Time Data</p>
+                                    </div>
+
                                 </div>
                               </div>
                     <!-- Info: Slide 1 -->
@@ -194,54 +210,52 @@ crossorigin="">
   <!-- Modal -->
 <!-- News -->
 
-              <!-- Weather -->
-                <!-- Modal -->
-                <div class="modal fade hide" id="weather" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel2">Weather</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                        </button>
-                      </div>
-                        <div class="modal-body">
-                  <!-- Carousel      -->
-                          <div id="carouselIndicatorsWeather" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                    <!-- Weather: Slide -->
-                              <div class="carousel-item active">
-                                <div class="carousel-caption ">
+<!-- Weather -->
+  <!-- Modal -->
+        <div class="modal fade hide" id="weather" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Weather</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <!-- Carousel      -->
+              <div id="carouselIndicatorsWeather" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <!-- Weather: Slide -->
+                  <div class="carousel-item active">
+                    <div class="carousel-caption nopadding">
                       <!-- Today -->
-                                  <img class="" height="50px" width="50px" id="weathericontoday" src="#" alt="First weather slide">
-                                  <h5 class="card-title" id="weatherdescriptiontoday"></h5>
-                                  <h6 class="card-title" id="weathertemptoday"></h6>
-                                  <h6 class="card-title" id="weathersuntoday"></h6>
+                      <img class="" height="50px" width="50px" id="weathericontoday" src="#" alt="First weather slide">
+                      <h5 class="card-title" id="weatherdescriptiontoday"></h5>
+                      <h6 class="card-title" id="weathertemptoday"></h6>
+                      <h6 class="card-title" id="weathersuntoday"></h6>
                       <!-- Tomorrow -->
-                                  <img class="" height="50px" width="50px" id="weathericontomorrow" src="#" alt="Second weather slide">
-                                  <h5 class="card-title" id="weatherdescriptiontomorrow"></h5>
-                                  <h6 class="card-title" id="weathertemptomorrow"></h6>
-                                  <h6 class="card-title" id="weathersuntomorrow"></h6>
+                      <img class="" height="50px" width="50px" id="weathericontomorrow" src="#" alt="Second weather slide">
+                      <h5 class="card-title" id="weatherdescriptiontomorrow"></h5>
+                      <h6 class="card-title" id="weathertemptomorrow"></h6>
+                      <h6 class="card-title" id="weathersuntomorrow"></h6>
                       <!-- Day After Tomorrow -->  
-                                  <img class=""  height="50px" width="50px" id="weathericonnext" src="#" alt="Third weather slide">
-                                  <h5 class="card-title" id="weatherdescriptionnext"></h5>
-                                  <h6 class="card-title" id="weathertempnext"></h6>
-                                  <h6 class="card-title" id="weathersunnext"></h6>
-                                </div>     
-                              </div>
-                    <!-- Weather: Slide -->
-                            </div>
-                          </div>
-                  <!-- Carousel      -->
-                        </div>
-                    </div>
+                      <img class=""  height="50px" width="50px" id="weathericonnext" src="#" alt="Third weather slide">
+                      <h5 class="card-title" id="weatherdescriptionnext"></h5>
+                      <h6 class="card-title" id="weathertempnext"></h6>
+                      <h6 class="card-title" id="weathersunnext"></h6>
+                    </div>     
                   </div>
+                 <!-- Weather: Slide -->
                 </div>
-                <!-- Modal -->
-              <!-- Weather -->
+              </div>
+            <!-- Carousel      -->
+            </div>
           </div>
-      </div>        
+        </div>
+      </div>
+  <!-- Modal -->
+<!-- Weather -->
+    </div>
   </main>
 <!-- Map -->
 

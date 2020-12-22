@@ -18,22 +18,23 @@
 /*--------------------------   Map   --------------------------*/
 #map {
   display : table-cell;
-  height : 100%;
+
     width:100%;
   padding-left: 0;
   padding-right: 0;
 }
  main {
   position: absolute;
-  top:60px;
+  top:56px;
   bottom: 0;
-  height: calc(100%-66px);
+  height: 100%;
+  width: 100%;
  }
 
 
  
 #mapid {
-  height: 95vh;
+  height: calc(100% - 56px);
   z-index: 0; 
   display : table-cell;
  
@@ -51,11 +52,23 @@
   text-align: center;
 }
 
-.navbar.center .navbar-inner .nav {
-  display:inline-block;
-  float: none;
+
+/*Info Slide   
+--------------------------*/
+.infocontainer h5,
+.infocontainer p {
+    display: inline;
+    vertical-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    line-height: 1.25em;
 }
 
+.infogroup {
+  padding:1px;
+}
+/*-------------------------- 
+Info Slide*/
 
 
 
@@ -97,10 +110,10 @@
 
 }
 
-@media (min-width: 62em) {
+/* @media (min-width: 62em) {
   .featurette-heading {
     margin-top: 7rem;
-  }
+  } */
 
  
 
@@ -124,3 +137,4 @@
     padding-right:0;
     padding-left:0;
 }
+
